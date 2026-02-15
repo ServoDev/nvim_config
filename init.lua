@@ -3,6 +3,7 @@ vim.o.relativenumber = true
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.winborder = "rounded"
+vim.opt.path:append('**') -- enables easier searching for files
 
 -- disable comment continuation ; wrapped up to ovoid overide
 vim.api.nvim_create_autocmd("FileType", {
