@@ -2,6 +2,7 @@
 -- important default keybinds :
 -- shift+k              read info about function under cursor
 -- cntrl+w cntrl + d    read diagnostic info under cursor
+-- cntrl+x cntrl+o 		autocomplete
 
 -- vim options
 vim.o.relativenumber = true
