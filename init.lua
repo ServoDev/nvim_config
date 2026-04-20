@@ -13,6 +13,7 @@ vim.o.winborder = "rounded"
 vim.g.netrw_banner = 0
 vim.opt.path:append('**') -- enables easier searching for files
 
+
 -- disable comment continuation ; wrapped up to ovoid overide
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
@@ -46,3 +47,12 @@ vim.filetype.add({
 
 -- clangd lsp
 vim.lsp.enable({"clangd"})
+
+
+-- gd jumps to decleration rather than definition when using lsp
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local opts = { buffer = ev.buf, silent = true }
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  end,
+})
